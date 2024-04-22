@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'
 })
-export class FormularioComponent {
+export class FormularioContactComponent {
 
 }

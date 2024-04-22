@@ -1,3 +1,20 @@
 import { Routes } from '@angular/router';
+import { LoginComponent } from './componets/login/login.component';
+import { RegisterComponent } from './componets/register/register.component';
+import { DashboarComponent } from './componets/dashboar/dashboar.component';
+import { FormularioContactComponent } from './componets/contacto/formulario/formulario.component';
+import { TablaContactComponent } from './componets/contacto/tabla/tabla.component';
+import { TablaProductComponent } from './componets/producto/tabla/tabla.component';
+import { FormularioProdtoComponent } from './componets/producto/formulario/formulario.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    {path:'', component:LoginComponent},
+    {path:'***',redirectTo:'',pathMatch:'full'},
+    {path:'login', component:LoginComponent},
+    {path:'registrer', component:RegisterComponent},
+    {path:'dashboard',component:DashboarComponent},
+    {path:'conctactoFormulario',component:FormularioContactComponent},
+    {path:'conctactoTabla',component:TablaContactComponent},
+    {path:'productoFormulario',component:FormularioProdtoComponent},
+    {path:'productoTabla',component:TablaProductComponent},
+];
