@@ -1,1 +1,52 @@
-<p>login works!</p>
+
+<div class="conteiner">
+    <form action="" [formGroup]="formLogin" (submit)="login()">
+        <Label class="title">Sin Up</Label>
+        <hr>
+        <div class="conteiner-imgLogin">
+            <img 
+                src="https://www.altai.es/blog//Imagenes/BlogContenido/08-02-Como-hacer-un-inventario-y-no-morir-en-el-intento.jpg" 
+                alt="login" 
+                class="img-login"
+            >
+        </div>
+        <div class="conteiner-inputs">
+            <Label class="text-login">Usuario</Label>
+            <input 
+                type="text"  
+                formControlName="user" 
+                [ngStyle]="{'border': validator('user','required') ? '1px solid red' : '' }" 
+                placeholder="Usuario"
+                >
+    
+            <Label class="text-login">Constrasena</Label>
+            <input 
+                type="password"  
+                formControlName="password"
+                [ngStyle]="{'border': validator('password','required') ? '1px solid red' : '' }" 
+                placeholder="********"
+                >
+        
+        </div>
+       
+        <div class="conteiner-navegation">
+            <button type="submit" class="btn-login">Entrar</button>
+            <a href="http://" class="link-register">registrarte</a>
+        </div>
+
+
+    <div class="conteiner-validator">
+        @if (validator('user','required')) {
+            <label [ngStyle]="{'color': '#rgb(159 0 0)',
+                                'font-size': '15px'}" > Requiere El Usuario</label>
+        }
+        
+        @if (validator('password','required')) {
+            <label [ngStyle]="{ 
+                    'color': '#rgb(159 0 0)',
+                    'font-size': '15px'} "  > Requiere La contrasena</label>
+        }
+    </div>
+    </form>
+</div>
+
