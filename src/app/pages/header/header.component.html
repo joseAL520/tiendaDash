@@ -1,0 +1,13 @@
+<header>
+    <ul>
+        <li *ngFor="let item of menuItems">
+          <a *ngIf="!item.children" [routerLink]="item.route" routerLinkActive="router-link-active">{{ item.label }}</a>
+          <span *ngIf="item.children">{{ item.label }}</span>
+          <ul *ngIf="item.children">
+            <li *ngFor="let child of item.children">
+              <a [routerLink]="child.route" routerLinkActive="router-link-active">{{ child.label }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</header>

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,8 @@ export class LoginComponent {
   public formLogin: FormGroup
 
   constructor (
-      private formBuilder: FormBuilder
+      private formBuilder: FormBuilder,
+      private router: Router
   ){  
     this.formLogin = formBuilder.group({
         user:     ['',[Validators.required]],
@@ -30,7 +31,7 @@ export class LoginComponent {
     if(this.formLogin.status === 'INVALID'){
       alert('FAVOR DE LLENAR TODO LOS CAMPOS')
     }else{
-      console.log('goo');
+      this.router.navigate(['/pagePrincipal'])
     }
 
   }
