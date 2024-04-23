@@ -1,22 +1,49 @@
 <div class="sidebar">
+
+  <div class="conteiner-log">
+    <img  
+          src="https://cdn-icons-png.flaticon.com/512/5652/5652028.png" 
+          alt="logo"
+          class="logo-img">
+
+    <label class="text-logo"> Control total, inventario sin preocupaciones </label>
+  </div>
+
+<hr>
+<div class="conteinr-menu-invetario-img" >
+  <p class="conteinr-menu-invetario-img-text">Bienvenido</p>
+  <div class="conteinr-menu-invetario-img-alaing">
+      <img 
+          src="https://w7.pngwing.com/pngs/304/275/png-transparent-user-profile-computer-icons-profile-miscellaneous-logo-monochrome-thumbnail.png" 
+          alt="user" 
+          class="img-user">
+      <p class="conteinr-menu-invetario-img-name">Jose angel</p>
+  </div>  
+</div>
+
+<hr>
+
+  <div class="conteiner-nav">
     <ul>
-      <li><a routerLink="/dashboard">Dashboard</a></li>
+      <li><a routerLink="/pagePrincipal/dashboard">Dashboard</a></li>
       <li>
-        <a href="#">Contacto</a>
+        <a >Contacto</a>
         <ul>
-          <li><a routerLink="/contacto/conctactoFormulario">Formulario</a></li>
-          <li><a routerLink="/contacto/conctactoTabla">Tabla</a></li>
+          <li><a routerLink="/pagePrincipal/contacto/conctactoFormulario">Formulario</a></li>
+          <li><a routerLink="/pagePrincipal/contacto/conctactoTabla">Tabla</a></li>
         </ul>
       </li>
       <li>
-        <a href="#">Producto</a>
+        <a >Producto</a>
         <ul>
-          <li><a routerLink="/producto/productoFormulario">Formulario</a></li>
-          <li><a routerLink="/producto/productoTabla">Tabla</a></li>
+          <li><a routerLink="/pagePrincipal/producto/productoFormulario">Formulario</a></li>
+          <li><a routerLink="/pagePrincipal/producto/productoTabla">Tabla</a></li>
         </ul>
       </li>
     </ul>
   </div>
-  <div class="content">
+   
+  </div>
+  <div class="content-header">
     <router-outlet></router-outlet>
   </div>

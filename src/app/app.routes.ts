@@ -13,24 +13,31 @@ export const routes: Routes = [
     {path:'***',redirectTo:'',pathMatch:'full'},
     {path:'login', component:LoginComponent},
     {path:'registrer', component:RegisterComponent},
-    {path:'pagePrincipal',component:PagesComponent},
-    {path:'dashboard',component:DashboarComponent},
-    
-    {   path:'contacto',
-        title:'contaco',
-          children:[
-            {path:'conctactoFormulario',component:FormularioContactComponent},
-            {path:'conctactoTabla',component:TablaContactComponent},
-            ]
-    },
+    {path:'pagePrincipal',component:PagesComponent, children:[
+      
+      {path:'dashboard',component:DashboarComponent},
 
-    {   path:'producto',
+      { path:'contacto',
+        title:'contaco',
+        children:[
+          {path:'conctactoFormulario',component:FormularioContactComponent},
+          {path:'conctactoTabla',component:TablaContactComponent},
+        ]
+      },
+
+     {  path:'producto',
         title:'Producto',
-          children:[
-            {path:'productoFormulario',component:FormularioProdtoComponent},
-            {path:'productoTabla',component:TablaProductComponent},
-            ]
-    },
+        children:[
+          {path:'productoFormulario',component:FormularioProdtoComponent},
+          {path:'productoTabla',component:TablaProductComponent},
+        ]
+      },
+
+    ]},
+    
+    
+    
+    
 
 
 
