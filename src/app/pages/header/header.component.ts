@@ -14,23 +14,4 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
 
 
-  menuItems = [
-    { label: 'Dashboard', route: '/dashboard' },
-    {
-      label: 'Contacto', children: [
-        { label: 'Formulario', route: '/contacto/conctactoFormulario' },
-        { label: 'Tabla', route: '/contacto/conctactoTabla' }
-      ]
-    },
-    {
-      label: 'Producto', children: [
-        { label: 'Formulario', route: '/producto/productoFormulario' },
-        { label: 'Tabla', route: '/producto/productoTabla' }
-      ]
-    }
-  ];
-
-
-
-
 }
