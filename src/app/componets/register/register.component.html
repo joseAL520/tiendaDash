@@ -1,1 +1,155 @@
-<p>register works!</p>
+<div class="conteiner">
+
+    <form [formGroup]="formRegister" (submit)="addUserNew()">
+        <label> Registrate Con Nosotros</label>
+        <hr>
+
+        <div class="conteiner-form">
+
+        <div class="conteiner-name-last">
+            <span>Nombre:</span>
+            <input 
+                type="text"  
+                class="input-name" 
+                formControlName="nombre"
+                [ngStyle]="{'border': validator('nombre','required') ? '1px solid red' : '' }"  >
+            <span>Apellido:</span>
+            <input 
+                type="text"  
+                class="input-lastname" 
+                formControlName="apellido"
+                [ngStyle]="{'border': validator('apellido','required') ? '1px solid red' : '' }"  >
+
+            @if (validator('nombre','required') ) {
+                <label [ngStyle]="{'color': 'rgb(159 0 0)',
+                                    'font-size': '10px'}" > Este campo es requerido </label>
+            }
+
+            @if (validator('apellido','required')) {
+                <label [ngStyle]="{'color': 'rgb(159 0 0)',
+                                    'font-size': '10px'}" > Este campo es requerido </label>
+            }
+
+        </div>
+      
+        
+        <div class="conteiner-number-sex">
+            <div class="contain-sex">
+                <label class="title-sex">Sexo:</label>
+                <select class="contain-select-sex" 
+                        formControlName="sexo"
+                        [ngStyle]="{'border': validator('sexo','required') ? '1px solid red' : '' }">
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+                
+                @if (validator('sexo','required')) {
+                    <label [ngStyle]="{'color': 'rgb(159 0 0)',
+                                        'font-size': '10px'}" > Seleccione su Genero</label>
+                }
+
+            </div>
+    
+            <div class="contain-number">
+                <span>Numero de telefono:</span>
+                <input 
+                    type="text"  
+                    class="conteiner-input-number" 
+                    formControlName="numeroCelular"
+                    [ngStyle]="{'border': validator('numeroCelular','minlength') ? '1px solid red' : '' }">
+                @if (validator('numeroCelular','minlength')) {
+                    <label [ngStyle]="{'color': 'rgb(159 0 0)',
+                                        'font-size': '10px'}" > se requiere 12 dijitos </label>
+                }
+            </div>
+
+
+           
+        </div>
+      
+
+       
+        <div class="contain-emil">
+            <span>Correo: </span>
+            <input 
+                type="email" 
+                formControlName="correo"
+                [ngStyle]="{'border': validator('correo','email') ? '1px solid red' : '' }" 
+                [ngStyle]="{'border': validator('correo','required') ? '1px solid red' : '' }">
+        </div>           
+        @if (validator('correo','email')) {
+            <label
+                class="label-correo"
+                 [ngStyle]="{ 
+                    'color': 'rgb(159 0 0)',
+                    'font-size': '10px'} "  > el formato de correo no coincide</label>
+        }
+
+        @if (validator('correo','required')) {
+            <label
+                class="label-correo"
+                 [ngStyle]="{ 
+                    'color': 'rgb(159 0 0)',
+                    'font-size': '10px'} "  > Este campo es Obligatorio</label>
+        }
+
+            
+    
+        <div class="conteiner-passwor">
+            <span>Contrasena: </span>
+            <input 
+                type="password"  
+                formControlName="clave" 
+                [ngStyle]="{'border': validator('clave','minlength') ? '1px solid red' : '' }"
+                [ngStyle]="{'border': validator('clave','required') ? '1px solid red' : '' }">
+    
+            <span>Confirmar Contrasena: </span>
+            <input 
+                type="password"  
+                formControlName="claveConfirmacion"
+                [ngStyle]="{'border': validator('claveConfirmacion','minlength') ? '1px solid red' : '' }"
+                [ngStyle]="{'border': validator('claveConfirmacion','required') ? '1px solid red' : '' }">
+
+           
+        </div>
+            
+        @if (validator('clave','required') ) {
+            <label [ngStyle]="{'color': 'rgb(159 0 0)',
+                                'font-size': '10px'}" > Este campo es requerido </label>
+        }
+
+        @if (validator('clave','minlength')) {
+            <label [ngStyle]="{'color': 'rgb(159 0 0)',
+                                'font-size': '10px'}" > Se requiere un minimo de 8 digitos </label>
+        }
+        
+        @if (validator('claveConfirmacion','required') ) {
+            <label [ngStyle]="{'color': 'rgb(159 0 0)',
+                                'font-size': '10px'}" > Este campo es requerido </label>
+        }
+
+        @if (validator('claveConfirmacion','minlength')) {
+            <label [ngStyle]="{'color': 'rgb(159 0 0)',
+                                'font-size': '10px'}" > Se requiere un minimo de 8 digitos </label>
+        }
+
+        @if (validatorPassword()) {
+            <label [ngStyle]="{'color': 'rgb(159 0 0)',
+                                'font-size': '10px'}" > La clave no coincide </label>
+        }
+
+        
+
+
+        <div class="conteiner-btn">
+            <button type="submit" class="btn-register">Registrarme</button>
+        </div>
+
+        </div>
+       
+
+      
+    </form>
+
+</div>
