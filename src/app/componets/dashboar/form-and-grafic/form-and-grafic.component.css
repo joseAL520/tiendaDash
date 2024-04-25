@@ -11,10 +11,11 @@
 }
 
 .grafic-conteiner{
-    background: transparent;
+    background-color: rgba(255, 255, 255, 0.50);
     border-radius: 6px;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,1.12);
-    border: 1px solid black;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: #3c4858
 }
 
 .grafic-conteiner-ganacias{

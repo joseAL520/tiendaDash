@@ -1,14 +1,16 @@
 .conteiner{
-    padding: 10px 20px 10px 10px;
-    width:  650px;
-   
+    padding-top: 40px;
+    display: grid;
+    text-align: center;
+    justify-content: space-around;
 }
 
 
 .conteiter-table{
-    background: #fff;
+    background-color: rgba(255, 255, 255, 0.50);
     border-radius: 10px;
-    height: 493px;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, .25);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     
 }
 
@@ -42,9 +44,10 @@
 }
 
 table{
-    table-layout: fixed;
+    
     border-collapse: collapse;
-    border-spacing:10px
+    width: 850px;
+    height: 500px;
 }
 
 thead{
@@ -52,29 +55,26 @@ thead{
 }
 
 
-td{
-    padding: 10px;
-    border-bottom: solid 1px ;
 
-}
+
 
 .indice{
-    padding: 10px;
+    width: 10px;
 }
+
+
 .nombre{
-    width: 250px;
+    width: 150px;
 }
 
-.numero{
-    width: 100px
-}
-
-.correo{
+.marca{
     width: 100px;
 }
 
-.dirreccion{
-    width: 250px;
+.categoria{
+    width: 100px;
 }
 
-
+.proovedor{
+    width: 100px;
+}

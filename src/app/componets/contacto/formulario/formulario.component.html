@@ -4,6 +4,7 @@
         <label >Registrar Contactos</label><br>
 
         <hr>
+        <br>
         <input 
             type="text" 
             class="input-form input-identifiacacion " 
@@ -12,6 +13,8 @@
             [ngStyle]="{'border': validator('numeroIdentfiacion','required') ? '1px solid red' : 'none' }"
             [ngStyle]="{'border': validator('numeroIdentfiacion','minlength') ? '1px solid red' : 'none' }"    
         >
+        <br>
+        <br>
         <div class="mensaje-validator" *ngIf="validator('numeroIdentfiacion', 'required')">
             Favor de llenar el campo
         </div>
@@ -23,7 +26,7 @@
             class="input-form input-nombre" 
             placeholder="Nombres"
             formControlName="nombre"
-            [ngStyle]="{'border': validator('nombre','required') ? '1px solid red' : 'none' }"
+            [ngStyle]="{'border': validator('nombre','required') ? '1px solid red' : '' }"
         >
         <div class="mensaje-validator" *ngIf="validator('nombre', 'required')">
             Favor de llenar el campo
@@ -33,19 +36,19 @@
             class="input-form input-apellido" 
             placeholder="Apellido"
             formControlName="apellido"
-            [ngStyle]="{'border': validator('apellido','required') ? '1px solid red' : 'none' }"
+            [ngStyle]="{'border': validator('apellido','required') ? '1px solid red' : '' }"
         >
         <div class="mensaje-validator" *ngIf="validator('apellido', 'required')">
             Favor de llenar el campo
         </div>
         <hr>
-
+        <br>
         <input 
             type="text" 
             class="input-form input-correo" 
             placeholder="Correo"
             formControlName="correo"
-            [ngStyle]="{'border': validator('correo','required') ? '1px solid red' : 'none' }"
+            [ngStyle]="{'border': validator('correo','required') ? '1px solid red' : '' }"
         >
         <div class="mensaje-validator" *ngIf="validator('correo', 'required')">
             Favor de llenar el campo
@@ -55,8 +58,8 @@
             class="input-form input-numero" 
             placeholder="Numero"
             formControlName="numero"
-            [ngStyle]="{'border': validator('numero','required') ? '1px solid red' : 'none' }"
-            [ngStyle]="{'border': validator('numero','minlength') ? '1px solid red' : 'none' }"    
+            [ngStyle]="{'border': validator('numero','required') ? '1px solid red' : '' }"
+            [ngStyle]="{'border': validator('numero','minlength') ? '1px solid red' : '' }"    
         >
         <div class="mensaje-validator" *ngIf="validator('numero', 'required')">
             Favor de llenar el campo
@@ -65,17 +68,18 @@
             Son 10 digitos
         </div>
         <hr>
-
+        <br>
         <input 
             type="text" 
             class="input-form input-direccion" 
             placeholder="Dirreccion"
             formControlName="direccion"
-            [ngStyle]="{'border': validator('direccion','required') ? '1px solid red' : 'none' }"
+            [ngStyle]="{'border': validator('direccion','required') ? '1px solid red' : '' }"
         >
         <div class="mensaje-validator" *ngIf="validator('direccion', 'required')">
             Favor de llenar el campo
         </div>
+        <br>
 
         <textarea 
             placeholder="Detalle de la Dirreccion (Opcional)" 
@@ -84,7 +88,8 @@
             formControlName="describcion"  >
             
         </textarea>
-        
+        <br>
+        <br>
         <button 
             type="submit" 
             class="btn-registrar"

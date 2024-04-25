@@ -6,12 +6,14 @@
 }
 
 form{
+    background-color: rgba(255, 255, 255, 0.50);
     width: 500px;
     height: 450px;
     padding: 11px;
     margin: 10px;
-    box-shadow: 0 0 250px #000;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 span{
@@ -24,7 +26,7 @@ input{
     border-radius: 999px;
     text-align: center;
     background-color: transparent;
-    border: 1px solid #242c37;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     font-size: 15px;
     height: 25px;
 }
@@ -65,7 +67,7 @@ input{
     background-color: transparent;
     box-shadow: 0 0 250px #000;
     color: rgb(133, 133, 133);
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .contain-number{
@@ -110,8 +112,8 @@ input{
 }
 
 .btn-register{
-    background-color: #242c37;
-    color: #fff;
+    background-color: #818181b9;
+    color: black;
     border-radius: 10px;
     width: 100px;
     height: 25px;
@@ -119,5 +121,5 @@ input{
 }
 
 .btn-register:hover{
-    background-color: #59687e;
+    background-color: #7c7d7e;
 }

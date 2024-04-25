@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 body{
-    background-color:#354152;
+    /* background-color:#354152; */
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    color: #7e8ba3;
+    /* color: #7e8ba3; */
+    
+    color: #3c4858;
+    background-image : linear-gradient(rgba(255, 255, 255, 0.80), rgb(238, 238, 238)), url(https://cdn.pixabay.com/photo/2017/08/07/10/32/black-and-white-2602403_1280.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+   
 }

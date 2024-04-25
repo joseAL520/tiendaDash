@@ -13,8 +13,17 @@ form{
     height: 330px;
     padding: 11px;
     margin: 10px;
-    box-shadow: 0 0 250px #000;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.50);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+
+hr{
+    border: none;
+    height: 1px;
+    background-color: #a7a7a794;
 }
 
 .conteiner-inputs{
@@ -37,7 +46,7 @@ input{
     border-radius: 999px;
     text-align: center;
     background-color: transparent;
-    border: 2px solid #242c37;
+    border: 1px solid#a7a7a794;
     font-size: 15px;
 }
 
@@ -62,8 +71,8 @@ a{
 
 .btn-login{
  
-    background-color: #242c37;
-    color: #fff;
+    background-color: #7e8ba387;
+    color:  #3c4858;
     border-radius: 10px;
     width: 100px;
     height: 25px;
@@ -71,7 +80,7 @@ a{
 }
 
 .btn-login:hover{
-    background-color: #59687e;
+    background-color: #555f6e94;
 }
 
 
@@ -87,6 +96,6 @@ a{
     width:250px;
     height: 250px;
     border-radius: 50%;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.29);
-    border: 1px solid black;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.29);
+   
 }
