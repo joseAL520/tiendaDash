@@ -1,1 +1,72 @@
-<p>formulario works!</p>
+<div class="conte">
+    <form action=""  [formGroup]="formularioProducto" (submit)="addProduct()">
+        <div class="contect-form">
+        <label >Registrar Producto</label><br>
+        <hr>
+        <input 
+            type="text" 
+            class="input-form input-identifiacacion " 
+            placeholder="Identifacacion del producto"
+            formControlName="idProducto"
+            [ngStyle]="{'border': validator('idProducto','required') ? '1px solid red' : 'none' }"
+        >
+        <div 
+            class="mensaje-error" 
+            *ngIf="validator('idProducto', 'required')"> Favor de llenar el campo </div>
+        <input 
+            type="text" 
+            class="input-form input-nombre" 
+            placeholder="Nombre del producto"
+            formControlName="nombreProducto"
+            [ngStyle]="{'border': validator('nombreProducto','required') ? '1px solid red' : 'none' }"
+        >
+        <div class="mensaje-error" *ngIf="validator('nombreProducto','required')"> Favor de llenar el campo </div>
+        <input 
+            type="text" 
+            class="input-form input-apellido" 
+            placeholder="Marca"
+            formControlName="marcaProducto"
+            [ngStyle]="{'border': validator('marcaProducto','required') ? '1px solid red' : 'none' }"
+        >
+        <div class="mensaje-error" *ngIf="validator('marcaProducto', 'required')"> Favor de llenar el campo</div>
+        <hr>
+
+        <div class="continer-selector">
+            <p>Categoria</p>
+            <select 
+                class="input-form select-input "  
+                formControlName="categoria" 
+                [ngStyle]="{'border': validator('categoria','required') ? '1px solid red' : 'none' }">
+
+                <option value="aseo">aseo</option>
+                <option value="casa">casa</option>
+                <option value="carro">carro</option>
+                <option value="electrodomestico">electrodomestico</option>
+            </select>
+            <div class="mensaje-error" *ngIf="validator('categoria', 'required')"> Favor de seleccionar la categoria </div>
+
+            <p>Proveedor</p>
+            <select 
+                class="input-form  select-input"  
+                formControlName="proveedor"
+                [ngStyle]="{'border': validator('proveedor','required') ? '1px solid red' : 'none' }">
+                <option value="juan">Juan</option>
+                <option value="carlos">Carlos</option>
+                <option value={{nombre}}>{{nombre}}</option>
+            </select>
+            <div class="mensaje-error" *ngIf="validator('proveedor','required')"> Favor de seleccionar el proveedor </div>
+        </div>
+        <hr>
+
+        <textarea 
+            placeholder="descripcion del producto" 
+            class="descripcion-product" 
+            maxlength="50" 
+            formControlName="descripcion"
+        ></textarea>
+        <button type="submit" class="btn-registrar">Registrar</button><br>
+        
+        </div>
+    </form>
+
+</div>
