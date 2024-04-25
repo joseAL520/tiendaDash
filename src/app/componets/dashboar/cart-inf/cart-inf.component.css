@@ -1,0 +1,41 @@
+.contenedor-informacion{
+    /* background-color: blue; */
+    display: flex;
+}
+
+.contenedor-box{
+    width: 200px;
+    height: 125px;
+    margin-left: 50px;
+    margin-top: 30px;
+    border-radius: 6px;
+    text-align: end;
+    background: #354152;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 1.12);
+    border: 1px solid black;
+}
+
+.card-icon{
+    border-radius: 3px;
+    background-color:white;
+    padding: 10px;
+    margin-top: -20px;
+    margin-right: 15px;
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+}
+
+.text-conteiner-title{
+    padding: 15px;
+    color: white;
+    
+}
+
+.text-conteiner-informacion{
+    padding: 15px;
+    display: flex;
+    color: white;
+
+}

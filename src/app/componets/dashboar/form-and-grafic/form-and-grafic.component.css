@@ -1,0 +1,39 @@
+.conteiner-grafic{
+   
+    margin: 10px;
+    padding: 20px 10px 30px 39px;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, 550px);
+    align-items: center;
+    width: 1000px;
+    left: 10px;
+}
+
+.grafic-conteiner{
+    background: transparent;
+    border-radius: 6px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,1.12);
+    border: 1px solid black;
+}
+
+.grafic-conteiner-ganacias{
+    width: 500px;
+    height: 350px;
+    padding: 10px;
+    margin-left: 15px;
+    grid-row: span 2
+}
+
+.grafic-conteiner-perdida{
+    width: 300px;
+    height: 180px;
+    padding: 10px;
+    margin: 14px 10px 12px 16px;
+}
+
+.grafic-conteiner-contactos{
+    width: 320px;
+    height: 290px;
+    margin-left: 15px;
+}
