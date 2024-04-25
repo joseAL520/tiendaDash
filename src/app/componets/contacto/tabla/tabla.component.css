@@ -1,0 +1,80 @@
+.conteiner{
+    padding: 10px 20px 10px 10px;
+    width:  650px;
+   
+}
+
+
+.conteiter-table{
+    background: #fff;
+    border-radius: 10px;
+    height: 493px;
+    
+}
+
+.buscador{
+    margin: 10px;
+    background-color: rgb(236, 232, 232);
+    font-size: 20px;
+    border: 0;
+    border-radius: 10px;
+    text-align: start;
+    width: 200px;
+}
+
+
+.btn-buscar{
+    font-size: 15px;
+    width: 150px;
+    height: 30px;
+    background-color: rgba(177, 186, 194, 0.658);
+    border: 0;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+}
+
+
+.btn-buscar:hover{
+    background-color: rgba(172, 172, 172, 0.705) ;
+    color: black;
+}
+
+table{
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing:10px
+}
+
+thead{
+    background-color: rgba(159, 161, 161, 0.658);
+}
+
+
+td{
+    padding: 10px;
+    border-bottom: solid 1px ;
+
+}
+
+.indice{
+    padding: 10px;
+}
+.nombre{
+    width: 250px;
+}
+
+.numero{
+    width: 100px
+}
+
+.correo{
+    width: 100px;
+}
+
+.dirreccion{
+    width: 250px;
+}
+
+
