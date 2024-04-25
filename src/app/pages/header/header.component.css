@@ -97,6 +97,6 @@
 
 
 .content-header{
-  display: grid;
-  place-items: center;
+  position: relative;
+  margin-left: 270px;
 }
