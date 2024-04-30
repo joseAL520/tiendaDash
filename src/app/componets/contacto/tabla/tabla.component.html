@@ -1,4 +1,4 @@
-<div class="conteiner">
+<!-- <div class="conteiner">
 
     <div class="conteiter-table">
      <input type="text" name="" id="" placeholder="N de Identificacion" class="buscador">
@@ -28,4 +28,37 @@
     </div>
    
      
-   </div>
+   </div> -->
+
+
+   <div class="conteiner">
+    <div class="conteiter-table">
+      <input type="text" name="" id="" placeholder="N de Identificacion" class="buscador">
+      <button class="btn-buscar">buscar</button>
+      <table>
+        <thead>
+          <tr>
+            <th>N.</th>
+            <th>Nombre y Apellido</th>
+            <th>Celular</th>
+            <th>Correo.</th>
+            <th>Direccion.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contacto of listaContacto.slice(currentIndex, currentIndex + pageSize); let i = index">
+            <th scope="row" class="indice">{{ currentIndex + i + 1 }}</th>
+            <td class="nombre">{{ contacto.nombre }} {{ contacto.apellido }}</td>
+            <td class="numero">{{ contacto.numero }}</td>
+            <td class="correo">{{ contacto.correo }}</td>
+            <td class="dirreccion">{{ contacto.direccion }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <button (click)="previous()" [disabled]="currentIndex === 0">Anterior</button>
+      <button (click)="next()" [disabled]="currentIndex + pageSize >= listaContacto.length">Siguiente</button>
+    </div>
+  </div>
+  

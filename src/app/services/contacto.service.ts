@@ -20,16 +20,10 @@ export class ContactoService {
   getListContact(): Observable<any> {
     return this.http.get(`${this.apiUrl}/contacto.json`).pipe(
       map((response: any) => {
-        // Verificar si hay datos y limitar a 10 personas si es necesario
         if (response) {
-          const contactsArray = Object.values(response);
-          if (contactsArray.length > 10) {
-            return contactsArray.slice(0, 10); // Limitar a los primeros 10 elementos
-          } else {
-            return contactsArray; // Devolver todos los elementos si son menos de 10
-          }
+          return Object.values(response);
         } else {
-          return []; // Si no hay datos, devolver un array vacío
+          return [];
         }
       })
     );

@@ -12,20 +12,33 @@ import { ContactoService } from '../../../services/contacto.service';
 })
 export class TablaContactComponent  implements OnInit{
 
-   public listaContacto: any [] = []
+  public listaContacto: any[] = [];
+  public currentIndex = 0;
+  public pageSize = 10;
 
- 
-  constructor(
-      private contacto : ContactoService,
-  ){}
-
-  
-
+  constructor(private contacto: ContactoService) {}
 
   ngOnInit(): void {
-     this.contacto.getListContact().subscribe(data =>{
+    this.loadContacts();
+  }
+
+  loadContacts() {
+    this.contacto.getListContact().subscribe(data => {
       this.listaContacto = Object.values(data);
-     })
+    });
+  }
+
+  next() {
+    this.currentIndex += this.pageSize;
+    this.loadContacts();
+  }
+
+  previous() {
+    this.currentIndex -= this.pageSize;
+    if (this.currentIndex < 0) {
+      this.currentIndex = 0;
+    }
+    this.loadContacts();
   }
 
 }
