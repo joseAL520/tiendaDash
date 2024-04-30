@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ProductoService } from '../../../services/producto.service';
 
 @Component({
   selector: 'app-formulario',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css'
+  styleUrl: './formulario.component.css',
+  providers:[ProductoService]
 })
 export class FormularioProdtoComponent {
 
@@ -17,7 +19,8 @@ export class FormularioProdtoComponent {
 
 
   constructor (
-    private form: FormBuilder
+    private form: FormBuilder,
+    private apiProduct: ProductoService,
   ){
     this.formularioProducto = this.form.group({
         idProducto: ['',[Validators.required]],
@@ -35,7 +38,17 @@ export class FormularioProdtoComponent {
 
 
   addProduct(){
-   console.log(this.formularioProducto)
+
+    if (this.formularioProducto.valid) {
+      const productoData = this.formularioProducto.value;
+      this.apiProduct.registrarProdcto(productoData).subscribe()
+      this.formularioProducto.reset()
+    } else {
+      alert('favo de llenar los campos');
+    }
+
+
+   
   }
 
 
