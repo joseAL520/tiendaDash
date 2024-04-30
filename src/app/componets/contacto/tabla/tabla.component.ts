@@ -1,29 +1,31 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ContactoService } from '../../../services/contacto.service';
 
 @Component({
   selector: 'app-tabla',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './tabla.component.html',
-  styleUrl: './tabla.component.css'
+  styleUrl: './tabla.component.css',
+  providers: [ContactoService]
 })
-export class TablaContactComponent {
+export class TablaContactComponent  implements OnInit{
 
-  public listaContacto: any [] = []
+   public listaContacto: any [] = []
 
  
   constructor(
-      //  private _apiMock: ServicioContactoService
+      private contacto : ContactoService,
   ){}
 
+  
 
-  ngOnInit():void{
-      // this._apiMock.getListContact().subscribe(data => {
-      //   this.listaContacto = Object.values(data);
-      //   console.log(data);
-      // })
+
+  ngOnInit(): void {
+     this.contacto.getListContact().subscribe(data =>{
+      this.listaContacto = Object.values(data);
+     })
   }
-
 
 }
