@@ -3,6 +3,7 @@
     display: flex;
     place-items: center;
     justify-content: space-around;
+    text-align: center;
     
 }
 
@@ -25,8 +26,34 @@ label{
     background-color: rgba(255, 255, 255, 0.50);
     box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, .25);
     border: 1px solid rgba(0, 0, 0, 0.12);
+    width: 550px;
 }
 
+.conteiner-identi{
+    text-align: center;
+    margin: 15px;
+}
+
+.conteiner-name-lastname{
+       /* text-align: center; */
+       display: flex;
+       flex-wrap: wrap;
+       /* align-content: center; */
+       justify-content: center;
+       margin: 15px;
+}
+
+.content-corro-numb{
+    /* text-align: center; */
+    display: flex;
+    /* align-content: center; */
+    margin: 15px;
+}
+
+.validar-correo-numero{
+    display: flex;
+    justify-content: center;
+}
 
 .input-form{
     margin: 10px;
@@ -77,9 +104,8 @@ label{
 }
 
 
-
-
 .mensaje-validator{
     color: red;
     font-size: 10px;
+    margin-left: 20px;
 }

@@ -12,7 +12,7 @@ import { ProductoService } from '../../../services/producto.service';
   providers:[ProductoService]
 })
 export class FormularioProdtoComponent {
-
+  public smsValid: boolean = false
   nombre: string = "miguel";
   formularioProducto: FormGroup;
 
@@ -43,6 +43,11 @@ export class FormularioProdtoComponent {
       const productoData = this.formularioProducto.value;
       this.apiProduct.registrarProdcto(productoData).subscribe()
       this.formularioProducto.reset()
+      this.smsValid = true
+      setTimeout(() => {
+        this.smsValid = false
+      }, 3000);
+
     } else {
       alert('favo de llenar los campos');
     }

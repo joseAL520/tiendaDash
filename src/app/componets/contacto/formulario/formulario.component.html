@@ -4,71 +4,120 @@
         <label >Registrar Contactos</label><br>
 
         <hr>
-        <br>
-        <input 
+        <div class="conteiner-identi">
+            <input 
             type="text" 
             class="input-form input-identifiacacion " 
             placeholder="Numero De Identifacacion"
             formControlName="numeroIdentfiacion"
-            [ngStyle]="{'border': validator('numeroIdentfiacion','required') ? '1px solid red' : 'none' }"
-            [ngStyle]="{'border': validator('numeroIdentfiacion','minlength') ? '1px solid red' : 'none' }"    
-        >
-        <br>
-        <br>
-        <div class="mensaje-validator" *ngIf="validator('numeroIdentfiacion', 'required')">
-            Favor de llenar el campo
+            [ngStyle]="{'border': validator('numeroIdentfiacion','required') || validator('numeroIdentfiacion','minlength') || validator('numeroIdentfiacion','pattern')? '1px solid red' : 'none' }"
+ 
+            >
+            <div 
+                class="mensaje-validator" 
+                *ngIf="validator('numeroIdentfiacion', 'required')">
+                Favor de llenar el campo
+            </div>
+            <div 
+                class="mensaje-validator" 
+                *ngIf="validator('numeroIdentfiacion', 'minlength')">
+                Son 9 digitos
+            </div>
+            <div 
+                class="mensaje-validator" 
+                *ngIf="validator('numeroIdentfiacion', 'pattern')">
+                Solo se acepta numeros
+            </div>
+        
         </div>
-        <div class="mensaje-validator" *ngIf="validator('numeroIdentfiacion', 'minlength')">
-            Son 9 digitos
+
+        <div class="conteiner-name-lastname">
+            <input 
+                type="text" 
+                class="input-form input-nombre" 
+                placeholder="Nombres"
+                formControlName="nombre"
+                [ngStyle]="{'border': validator('nombre','required') ? '1px solid red' : '' }"
+            >
+           
+            
+            <input 
+                type="text" 
+                class="input-form input-apellido" 
+                placeholder="Apellido"
+                formControlName="apellido"
+                [ngStyle]="{'border': validator('apellido','required') ? '1px solid red' : '' }"
+            >
+           
+
+            <div 
+            class="mensaje-validator" 
+            *ngIf="validator('nombre', 'required')">
+            Favor de llenar el campo de nombre
+            </div>
+
+            <div 
+            class="mensaje-validator" 
+            *ngIf="validator('apellido', 'required')">
+            Favor de llenar el campo de apellido
+            </div>
+
         </div>
-        <input 
-            type="text" 
-            class="input-form input-nombre" 
-            placeholder="Nombres"
-            formControlName="nombre"
-            [ngStyle]="{'border': validator('nombre','required') ? '1px solid red' : '' }"
-        >
-        <div class="mensaje-validator" *ngIf="validator('nombre', 'required')">
-            Favor de llenar el campo
-        </div>
-        <input 
-            type="text" 
-            class="input-form input-apellido" 
-            placeholder="Apellido"
-            formControlName="apellido"
-            [ngStyle]="{'border': validator('apellido','required') ? '1px solid red' : '' }"
-        >
-        <div class="mensaje-validator" *ngIf="validator('apellido', 'required')">
-            Favor de llenar el campo
-        </div>
+
         <hr>
-        <br>
-        <input 
+
+        <div class="content-corro-numb">
+            <input 
             type="text" 
             class="input-form input-correo" 
             placeholder="Correo"
             formControlName="correo"
-            [ngStyle]="{'border': validator('correo','required') ? '1px solid red' : '' }"
-        >
-        <div class="mensaje-validator" *ngIf="validator('correo', 'required')">
-            Favor de llenar el campo
+            [ngStyle]="{'border': validator('correo','required') || validator('correo','email') ? '1px solid red' : '' }"
+            >
+        
+            <input 
+                type="text" 
+                class="input-form input-numero" 
+                placeholder="Numero"
+                formControlName="numero"
+                [ngStyle]="{'border': validator('numero','required') || validator('numero','minlength') || validator('numero','pattern') ? '1px solid red' : '' }"
+            >
         </div>
-        <input 
-            type="text" 
-            class="input-form input-numero" 
-            placeholder="Numero"
-            formControlName="numero"
-            [ngStyle]="{'border': validator('numero','required') ? '1px solid red' : '' }"
-            [ngStyle]="{'border': validator('numero','minlength') ? '1px solid red' : '' }"    
-        >
-        <div class="mensaje-validator" *ngIf="validator('numero', 'required')">
-            Favor de llenar el campo
+
+        <div class="validar-correo-numero">
+            <div 
+            class="mensaje-validator" 
+            *ngIf="validator('correo', 'required')">
+            Favor de llenar el campo de correo
+            </div>
+            <div 
+            class="mensaje-validator" 
+            *ngIf="validator('correo', 'email')">
+            el formato del campo es tipo email
+            </div>
+    
+            <div 
+                class="mensaje-validator" 
+                *ngIf="validator('numero', 'required')">
+                Favor de llenar el campo de numero
+            </div>
+    
+            <div 
+                class="mensaje-validator" 
+                *ngIf="validator('numero', 'minlength')">
+                Son 10 digitos
+            </div>
+
+            <div 
+            class="mensaje-validator" 
+            *ngIf= "validator('numero', 'pattern')">
+                solo se acepta campos numericos
+            </div>
+    
         </div>
-        <div class="mensaje-validator" *ngIf="validator('numero', 'minlength')">
-            Son 10 digitos
-        </div>
+    
         <hr>
-        <br>
+
         <input 
             type="text" 
             class="input-form input-direccion" 
@@ -96,6 +145,8 @@
         >
           Registrar
         </button>
+        
         </div>
+        <label *ngIf="smsValid" [ngStyle]="{'color':'green ', 'font-size':'10px'}"> Contato guardado exitozamente</label>
     </form>
 </div>

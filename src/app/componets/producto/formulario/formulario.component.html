@@ -14,14 +14,16 @@
             class="mensaje-error" 
             *ngIf="validator('idProducto', 'required')"> Favor de llenar el campo </div>
         <br>
-        <input 
+
+        <div class="content-marca-product">
+            <input 
             type="text" 
             class="input-form input-nombre" 
             placeholder="Nombre del producto"
             formControlName="nombreProducto"
             [ngStyle]="{'border': validator('nombreProducto','required') ? '1px solid red' : '' }"
         >
-        <div class="mensaje-error" *ngIf="validator('nombreProducto','required')"> Favor de llenar el campo </div>
+       
         <input 
             type="text" 
             class="input-form input-apellido" 
@@ -29,7 +31,13 @@
             formControlName="marcaProducto"
             [ngStyle]="{'border': validator('marcaProducto','required') ? '1px solid red' : '' }"
         >
-        <div class="mensaje-error" *ngIf="validator('marcaProducto', 'required')"> Favor de llenar el campo</div>
+        
+        </div>
+        <div class="validaror-content">
+            <div class="mensaje-error" *ngIf="validator('nombreProducto','required')"> Favor de llenar el campo del nombre </div>
+        <div class="mensaje-error" *ngIf="validator('marcaProducto', 'required')"> Favor de llenar el campo de la marca</div>
+        </div>
+        
         <hr>
 
         <div class="continer-selector">
@@ -44,7 +52,7 @@
                 <option value="carro">carro</option>
                 <option value="electrodomestico">electrodomestico</option>
             </select>
-            <div class="mensaje-error" *ngIf="validator('categoria', 'required')"> Favor de seleccionar la categoria </div>
+            
 
             <p>Proveedor</p>
             <select 
@@ -55,6 +63,8 @@
                 <option value="carlos">Carlos</option>
                 <option value={{nombre}}>{{nombre}}</option>
             </select>
+
+            <div class="mensaje-error" *ngIf="validator('categoria', 'required')"> Favor de seleccionar la categoria </div>
             <div class="mensaje-error" *ngIf="validator('proveedor','required')"> Favor de seleccionar el proveedor </div>
         </div>
         <hr>
@@ -69,6 +79,7 @@
         <button type="submit" class="btn-registrar">Registrar</button><br>
         
         </div>
+        <label *ngIf="smsValid" [ngStyle]="{'color':'green ', 'font-size':'10px'}"> Contato guardado exitozamente</label>
     </form>
 
 </div>

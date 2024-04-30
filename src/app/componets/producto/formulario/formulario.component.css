@@ -3,6 +3,8 @@
     display: flex;
     place-items: center;
     justify-content: space-around;
+    text-align: center;
+    margin-top: 50px;
 }
 hr{
     margin: 10px;
@@ -20,9 +22,21 @@ label{
     background-color: rgba(255, 255, 255, 0.50);
     box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, .25);
     border: 1px solid rgba(0, 0, 0, 0.12);
-    width: 700px;
+    width: 650px;
 }
 
+
+.content-marca-product{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.validaror-content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
 
 .input-form{
     margin: 10px;
@@ -36,6 +50,9 @@ label{
 
 .continer-selector{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 p{
@@ -90,4 +107,5 @@ p{
 .mensaje-error{
     color: red;
     font-size: 10px;
+    margin-left: 30px;
 }
