@@ -51,14 +51,19 @@
             <td class="nombre">{{ contacto.nombre }} {{ contacto.apellido }}</td>
             <td class="numero">{{ contacto.numero }}</td>
             <td class="correo">{{ contacto.correo }}</td>
-            <td class="dirreccion">{{ contacto.direccion }}</td>
+            <td class="dirreccion">{{ contacto.direccion }}  <span>{{contacto.descripcion}}</span> </td>
           </tr>
         </tbody>
       </table>
     </div>
     <div>
-      <button (click)="previous()" [disabled]="currentIndex === 0">Anterior</button>
-      <button (click)="next()" [disabled]="currentIndex + pageSize >= listaContacto.length">Siguiente</button>
+      <button 
+        (click)="previous()" [disabled]="currentIndex === 0"   
+        class="btn-page">Anterior</button>
+      <button 
+        (click)="next()" [disabled]="currentIndex + pageSize  >= listaContacto.length"
+        class="btn-page"
+        >Siguiente</button>
     </div>
   </div>
   

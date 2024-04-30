@@ -55,7 +55,15 @@ thead{
 }
 
 
+th{
+    border: 1px solid #dddddd;
+}
 
+td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
 
 .indice{
@@ -64,17 +72,33 @@ thead{
 
 
 .nombre{
+    width: 130px;
+}
+
+.numero{
+    width: 90px;
+}
+
+.correo{
+    width: 100px;
+}
+
+.dirreccion{
+    width: 100px;
+}
+
+span{
+    color: rgba(177, 177, 177, 0.733);
+}
+
+.btn-page{
+    font-size: 15px;
     width: 150px;
-}
+    height: 30px;
+    background-color: rgba(177, 186, 194, 0.658);
+    border: 0;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
 
-.marca{
-    width: 100px;
-}
-
-.categoria{
-    width: 100px;
-}
-
-.proovedor{
-    width: 100px;
 }

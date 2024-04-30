@@ -44,7 +44,6 @@
 }
 
 table{
-    
     border-collapse: collapse;
     width: 850px;
     height: 500px;
@@ -54,6 +53,15 @@ thead{
     background-color: rgba(159, 161, 161, 0.658);
 }
 
+th{
+    border: 1px solid #dddddd;
+}
+
+td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
 
 .indice{
@@ -62,17 +70,35 @@ thead{
 
 
 .nombre{
-    width: 150px;
+    width: 120px;
 }
 
 .marca{
-    width: 100px;
+    width: 75px;
 }
 
 .categoria{
-    width: 100px;
+    width: 90px;
 }
 
 .proovedor{
     width: 100px;
+}
+
+.descripcion{
+    width: 150px;
+}
+
+
+
+.btn-page{
+    font-size: 15px;
+    width: 150px;
+    height: 30px;
+    background-color: rgba(177, 186, 194, 0.658);
+    border: 0;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
 }

@@ -31,8 +31,14 @@
     </div>
    
     <div>
-      <button (click)="previous()" [disabled]="currentIndex === 0">Anterior</button>
-      <button (click)="next()" [disabled]="currentIndex + pageSize >= listProducto.length">Siguiente</button>
+      <button 
+        (click)="previous()" 
+        [disabled]="currentIndex === 0"
+        class="btn-page">Anterior</button>
+      <button 
+        (click)="next()" 
+        [disabled]="currentIndex + pageSize >= listProducto.length"
+        class="btn-page">Siguiente</button>
     </div> 
 
 
