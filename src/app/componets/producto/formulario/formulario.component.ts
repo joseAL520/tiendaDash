@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductoService } from '../../../services/producto.service';
+import { CategoriaProducto, categoriProducto } from '../../../interfaces/categoria.producto.interface';
 
 @Component({
   selector: 'app-formulario',
@@ -13,6 +14,7 @@ import { ProductoService } from '../../../services/producto.service';
 })
 export class FormularioProdtoComponent {
   public smsValid: boolean = false
+  categorias: CategoriaProducto[] = categoriProducto;
   nombre: string = "miguel";
   formularioProducto: FormGroup;
 

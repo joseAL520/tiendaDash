@@ -47,10 +47,10 @@
                 formControlName="categoria" 
                 [ngStyle]="{'border': validator('categoria','required') ? '1px solid red' : '' }">
 
-                <option value="aseo">aseo</option>
-                <option value="casa">casa</option>
-                <option value="carro">carro</option>
-                <option value="electrodomestico">electrodomestico</option>
+                <!-- Iterar sobre las propiedades de la interfaz CategoriaProducto -->
+                <ng-container *ngFor="let categoria of categorias[0] | keyvalue">
+                    <option [value]="categoria.key">{{ categoria.value }}</option>
+                </ng-container>
             </select>
             
 
