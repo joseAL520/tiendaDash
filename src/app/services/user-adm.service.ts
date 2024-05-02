@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UserAdmin } from '../interfaces/user.adm.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,9 @@ export class UserAdmService {
   }
 
 
-
+  registrarContacto(data:UserAdmin){
+    return this.http.post(`${this.apiUrl}/usuario_Admin`,data)
+  }
 
 
 }

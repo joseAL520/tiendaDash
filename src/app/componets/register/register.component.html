@@ -22,12 +22,14 @@
 
             @if (validator('nombre','required') ) {
                 <label [ngStyle]="{'color': 'rgb(159 0 0)',
-                                    'font-size': '10px'}" > Este campo es requerido </label>
+                                    'font-size': '10px',
+                                    'margin-left':'55px'}" > Este campo es requerido de nombre </label>
             }
 
             @if (validator('apellido','required')) {
                 <label [ngStyle]="{'color': 'rgb(159 0 0)',
-                                    'font-size': '10px'}" > Este campo es requerido </label>
+                                    'font-size': '10px',
+                                    'margin-left':'100px'}" > Este campo es requerido  de apellido </label>
             }
 
         </div>
@@ -57,10 +59,15 @@
                     type="text"  
                     class="conteiner-input-number" 
                     formControlName="numeroCelular"
-                    [ngStyle]="{'border': validator('numeroCelular','minlength') ? '1px solid red' : '' }">
+                    [ngStyle]="{'border': validator('numeroCelular','minlength') || validator('numeroCelular','pattern') ? '1px solid red' : '' }">
                 @if (validator('numeroCelular','minlength')) {
                     <label [ngStyle]="{'color': 'rgb(159 0 0)',
-                                        'font-size': '10px'}" > se requiere 12 dijitos </label>
+                                        'font-size': '10px'}" > se requiere 10 dijitos </label>
+                }
+
+                @if (validator('numeroCelular','pattern')) {
+                    <label [ngStyle]="{'color': 'rgb(159 0 0)',
+                                        'font-size': '10px'}" > solo se acepta numeros </label>
                 }
             </div>
 
@@ -75,6 +82,7 @@
             <input 
                 type="email" 
                 formControlName="correo"
+                autocomplete="username"
                 [ngStyle]="{'border': validator('correo','email') ? '1px solid red' : '' }" 
                 [ngStyle]="{'border': validator('correo','required') ? '1px solid red' : '' }">
         </div>           
@@ -101,6 +109,7 @@
             <input 
                 type="password"  
                 formControlName="clave" 
+                autocomplete="new-password"
                 [ngStyle]="{'border': validator('clave','minlength') ? '1px solid red' : '' }"
                 [ngStyle]="{'border': validator('clave','required') ? '1px solid red' : '' }">
     
@@ -108,14 +117,15 @@
             <input 
                 type="password"  
                 formControlName="claveConfirmacion"
+                autocomplete="new-password"
                 [ngStyle]="{'border': validator('claveConfirmacion','minlength') ? '1px solid red' : '' }"
                 [ngStyle]="{'border': validator('claveConfirmacion','required') ? '1px solid red' : '' }">
 
            
         </div>
             
-        @if (validator('clave','required') ) {
-            <label [ngStyle]="{'color': 'rgb(159 0 0)',
+            @if (validator('clave','required') ) {
+                <label [ngStyle]="{'color': 'rgb(159 0 0)',
                                 'font-size': '10px'}" > Este campo es requerido </label>
         }
 
@@ -139,17 +149,12 @@
                                 'font-size': '10px'}" > La clave no coincide </label>
         }
 
-        
+        </div>
 
-
+      
         <div class="conteiner-btn">
             <button type="submit" class="btn-register">Registrarme</button>
         </div>
-
-        </div>
-       
-
-      
     </form>
 
 </div>
